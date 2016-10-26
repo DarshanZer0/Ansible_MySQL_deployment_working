@@ -1,0 +1,7 @@
+- hosts: node1
+  become: yes
+  roles:
+     - { role: ansible-role-mysql, root_db_pass: 'dcworld', mysql_db: [{name: dc1},
+                                {name: dc2}],
+        mysql_users: [{name: dc1, pass: sQl^123456, priv: "*.*:ALL"},
+                      {name: dc2, pass: sQl^456123}] }
